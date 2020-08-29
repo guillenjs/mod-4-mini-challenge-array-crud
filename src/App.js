@@ -24,16 +24,26 @@ class App extends React.Component {
     }
     console.log("createTodo", newTodo)
 
+    const updatedTodo = [...this.state.todos, newTodo] 
+
+    this.setState({
+      todos: updatedTodo
+    }, () => console.log(this.state))
     // TODO: add the new Todo to the list in state
     // make sure not to mutate the existing array!
+
   }
 
   deleteTodo = id => {
     console.log("deleteTodo", id)
-
+    const deleteTodo = this.state.todos.filter(todo => todo.id !== id)
     // TODO: remove ONE todo from state using the id
     // make sure not to mutate the existing array!
+    this.setState({ 
+      todos:deleteTodo
+    })
   }
+  
 
   updateTodo = (id, completed) => {
     console.log("updateTodo", id, completed)

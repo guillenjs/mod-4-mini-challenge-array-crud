@@ -57,7 +57,7 @@ addComment = newComment => {
 
 ```js
 removeComment = commentId => {
-  // filter to return a new array with the comment we don't want removed
+  // filter to return a new array with the comments we don't want removed
   const updatedComments = this.state.comments.filter(comment => comment.id !== commentId) 
 
   this.setState({ 
